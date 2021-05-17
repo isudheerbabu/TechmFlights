@@ -1,0 +1,99 @@
+<!-- <div class="container"> -->
+    <div class="bookings-box">
+        <div class="radio-btn">
+            <input type="radio" class="btn" name="check" [(ngModel)]="check" [value]="true" checked="check"><span>One Way</span>
+            <input type="radio" class="btn" name="check" [(ngModel)]="check" [value]="false"><span>Round Trip</span>
+        </div>
+
+        <form class="bookings-form" [formGroup]="flightForm" (ngSubmit)="searchFlights()"  >
+            <div class="form-group row">
+                <label for="from" class="col-sm-2 col-form-label">From</label>
+                    <!-- <input type="text" class="form-control" #from placeholder="Enter City/Airport Name"> -->
+                    <!-- <select>
+                        <option  *ngFor="let item of cities" [value]="item.city" #from>{{item.city}}</option>
+                    </select> -->
+                    <div class="ng-autocomplete col-sm-10">
+                            <ng-autocomplete class="form-control"  formControlName="fromCity"
+                              [data]="cities"
+                              [searchKeyword]="keyword"
+                              (selected)='selectEvent($event)'
+                              (inputChanged)='onChangeSearch($event)'
+                              (inputFocused)='onFocused($event)'
+                              [itemTemplate]="itemTemplate"
+                              [notFoundTemplate]="notFoundTemplate">                                 
+                            </ng-autocomplete>
+                            
+                            <ng-template #itemTemplate let-item >
+                            <a [innerHTML]="item.city"></a>
+                            </ng-template>
+                            
+                            <ng-template #notFoundTemplate let-notFound>
+                            <div [innerHTML]="notFound"></div>
+                            </ng-template>
+                    </div>
+            </div>
+            <div class="form-group row">
+                <label for="to" class="col-sm-2 col-form-label">To</label>
+                    <!-- <input type="text" class="form-control" #to placeholder="Enter City/Airport Name"> -->
+                    <!-- <select>
+                        <option  *ngFor="let item of cities" [value]="item.city" #to>{{item.city}}</option>
+                    </select> -->
+                    <div class="ng-autocomplete col-sm-10">
+                            <ng-autocomplete class="form-control" formControlName="toCity"
+                              [data]="cities"
+                              [searchKeyword]="keyword"
+                              (selected)='selectEvent($event)'
+                              (inputChanged)='onChangeSearch($event)'
+                              (inputFocused)='onFocused($event)'
+                              [itemTemplate]="itemTemplate"
+                              [notFoundTemplate]="notFoundTemplate">                                 
+                            </ng-autocomplete>
+                            
+                            <ng-template #itemTemplate let-item >
+                            <a [innerHTML]="item.city"></a>
+                            </ng-template>
+                            
+                            <ng-template #notFoundTemplate let-notFound>
+                            <div [innerHTML]="notFound"></div>
+                            </ng-template>
+                    </div>
+            </div>
+            <div class="form-group row">
+                <label for="depart" class="col-sm-2 col-form-label">Departure</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control select-date" formControlName="depDate" placeholder="Select Date">
+                </div>
+            </div>
+            <div *ngIf="!check" class="form-group row">
+                <label for="return" class="col-sm-2 col-form-label">Return</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control select-date" formControlName="reDate" placeholder="Select Date">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="passangers" class="col-sm-2 col-form-label">Passangers</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" formControlName="pass" placeholder="Enter No. of Passangers">
+                </div>
+            </div>
+            <div class="form-group row">
+                    <label for="class-type" class="col-sm-2 col-form-label">Class</label>
+                <div class="col-sm-10">
+                   <select formControlName="tClass" id="travelClass" class="custom-select">
+                        <option value="Economy" >Economy Class</option>
+                        <option value="Business">Business Class</option>
+                     </select>
+                </div>
+            </div>
+            
+
+            <div class="form-group row">
+                <label for="class-type" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <button type="submit" [disabled]="!flightForm.valid" class="btn btn-block btn-warning flight"> Happy Easy Search</button>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+<!-- </div> -->

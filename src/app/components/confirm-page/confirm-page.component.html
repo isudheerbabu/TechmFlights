@@ -1,0 +1,46 @@
+
+<div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card card-outline-secondary">
+            <div class="card-header">
+              <h3 class="mb-0">Please enter details for your booking confirmation</h3>
+            </div>
+            <div class="card-body">
+              <form  [formGroup]="confirmForm" (ngSubmit)="onSubmit()" >
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">First name</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" formControlName="firstName" type="text">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" formControlName="lastName"  type="text">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" formControlName="email" type="email">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Mobile</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="number" formControlName="mobile">
+                  </div>
+                </div>
+                                
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label"></label>
+                  <div class="col-lg-9" style="gap: 20px; margin-top: 10px">
+                        <button class="btn btn-primary" type="submit" [disabled]="!confirmForm.valid">Confirm Details</button>
+                        <button class="btn btn-secondary" style="margin-left: 10px;" type="reset" value="Cancel"> Cancel</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>

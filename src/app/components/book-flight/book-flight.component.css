@@ -1,0 +1,56 @@
+.bookings-box {
+    max-width: 550px;
+    margin: 3% auto 0;
+    margin-bottom: 80px;
+    border: 2px solid rgb(80, 80, 80);
+}
+.radio-btn {
+    margin: 0 20px;
+}
+.radio-btn .btn {
+    margin: 20px 10px 20px 0;
+    box-shadow: none;
+}
+.radio-btn .btn::after {
+    content: '';
+    height: 15px;
+    width: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    display: inline-block;
+    visibility: visible;
+    border-radius: 50%;
+}
+.radio-btn .btn:checked::After {
+    content:'';
+    transition: 0.5s;
+}
+.radio-btn span {
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.bookings-form {
+    padding: 0 20px 20px;
+    display: block;
+}
+
+.bookings-form label {
+    margin-bottom: 5px; 
+    margin-top: 3px; 
+    font-size: 14px;
+    color: #000;
+}
+.input-grp  {
+    display: inline-block;
+}
+.ng-autocomplete {
+    width: 416px;
+    margin: 1px 6px;
+    padding: 0;
+}
+.custom-select {
+    width: 416px;
+    height: 36px;
+}

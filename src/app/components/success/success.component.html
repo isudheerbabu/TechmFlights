@@ -1,0 +1,68 @@
+<div class="wrapper">
+  
+    <div class="ticket">
+    <div class="ticket-header">
+      <div class="ticket-departure">
+        <h1 class="city-abbr">{{flightDetails.fromCity.city | slice:0:3 }}</h1><span class="city-name">{{flightDetails.fromCity.city}}</span>
+      </div>
+      <div class="separator">
+        <i class="fas fa-plane"></i>
+      </div>
+      <div class="ticket-destination">
+        <h1 class="city-abbr">{{flightDetails.toCity.city | slice:0:3 }}</h1><span class="city-name">{{flightDetails.toCity.city}}</span>
+      </div>
+    </div>
+    <div class="ticket-body">
+      <div class="row">
+        <div class="col item">
+          <h2 class="name">Airline</h2><span class="value">{{locDetails.airline_name}}</span>
+        </div>
+        <div class="col item">
+          <h2 class="name">Flight</h2><span class="value">{{locDetails.flight_number}}</span>
+        </div>
+        <div class="col item">
+          <h2 class="name">Passangers</h2><span class="value">{{flightDetails.pass}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col item">
+          <h2 class="name">EMail</h2><span class="value">{{passDetails.email}}</span>
+        </div>
+        <div class="col item">
+          <h2 class="name">Mobile</h2><span class="value">{{passDetails.mobile}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col half">
+          <div class="row-vertical">
+            <div class="col">
+              <div class="item">
+                <h2 class="name">User</h2><span class="value">{{passDetails.firstName}} {{passDetails.lastName}}</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="item">
+                <h2 class="name">Class</h2><span class="value">{{flightDetails.tClass}}</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="item">
+                <h2 class="name">Departure</h2><span class="value">{{flightDetails.depDate}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col half"><img class="ticket-qrcode" src="/assets/qr-code.png" alt="Ticket Code"/></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card1">
+    <h1><span>Thank You</span></h1>
+    <h2><em>Payment link sent to your email.</em></h2>
+    <div class="innercard1">
+      <i class="fa fa-check-circle"></i>
+      <h3>success</h3>
+    </div>
+  </div>
+</div>
